@@ -1,0 +1,323 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #ffebee;
+    color: #d81b60;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Tambahkan di bagian responsive */
+@media (max-width: 768px) {
+    .page {
+        width: 90%;
+        padding: 15px;
+    }
+
+    button {
+        padding: 12px 24px;
+        font-size: 18px;
+    }
+
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #runaway-btn {
+        position: relative;
+        margin-top: 10px;
+    }
+
+    .hearts {
+        font-size: 24px;
+    }
+}
+
+/* Perbaikan untuk button runaway */
+#runaway-btn {
+    position: relative;
+    background-color: #ff6b6b;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+}
+
+#runaway-btn:hover,
+#runaway-btn:active {
+    background-color: #ff5252;
+}
+
+/* Pastikan button tetap dalam container */
+.button-container {
+    position: relative;
+    min-height: 60px;
+    margin: 20px 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.page {
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: #d81b60;
+}
+
+/* .button-group {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#runaway-btn {
+    position: relative;
+    background-color: #ff6b6b;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+#runaway-btn:hover {
+    background-color: #ff5252;
+} */
+
+/* Tambahkan class untuk touch device */
+.touch-device #runaway-btn {
+    padding: 15px 25px;
+    font-size: 18px;
+}
+
+.touch-device .button-container {
+    margin-top: 30px;
+}
+
+/* Perbaikan untuk teks "jangan kabur" */
+#dont-run-text {
+    position: absolute;
+    color: #ff4081;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 100;
+}
+
+@media (max-width: 768px) {
+    #dont-run-text {
+        font-size: 16px;
+    }
+}
+
+#dont-run-text {
+    position: absolute;
+    color: #ff4081;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#dont-run-text.show {
+    opacity: 1;
+}
+
+.hearts {
+    font-size: 30px;
+    margin-top: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Animasi Bunga Mekar */
+.flower {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('https://cdn.pixabay.com/photo/2023/02/14/12/42/flower-7788991_640.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: bloom 2s ease-out forwards;
+    z-index: 10;
+}
+
+@keyframes bloom {
+    0% {
+        transform: scale(0.1) rotate(0deg);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+/* Floating Love Background */
+.love-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.love-bg::before {
+    content: "❤️";
+    position: absolute;
+    font-size: 20px;
+    opacity: 0.5;
+    animation: floatLove 15s linear infinite;
+}
+
+@keyframes floatLove {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-20vh) rotate(360deg);
+    }
+}
+
+/* Music Player */
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+#musicBtn {
+    background: #ff4081;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/* Text Animation */
+.apology-text p,
+.promise-text p {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.apology-text p:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.apology-text p:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.apology-text p:nth-child(3) {
+    animation-delay: 0.9s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tambahkan di CSS */
+#music-alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+#music-alert.hidden {
+  display: none;
+}
+
+.alert-box {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.alert-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.alert-buttons button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+#alert-pause {
+  background: #ff4081;
+  color: white;
+}
+
+#alert-continue {
+  background: #f0f0f0;
+  color: #333;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Untuk Cantikku ❤️ | Maafin Aku Ya</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Floating Love Background -->
+    <div class="love-bg"></div>
+
+    <!-- Music Player -->
+    <div class="music-player">
+      <audio id="bgMusic" loop>
+        <source src="img/sorry.mp3" type="audio/mpeg" />
+        (Download lagu romantis & ganti link ini)
+      </audio>
+      <button id="musicBtn">🎵 Putar Musik</button>
+    </div>
+
+    <div class="container">
+      <!-- Halaman 1: Pembuka -->
+      <div class="page" id="page1">
+        <h1>Selamat Pagiii Sayangkuuu... ❤️</h1>
+        <p>Ini aku buatin sesuatu khusus buat kamu...</p>
+        <button onclick="nextPage()">Klik di sini sayanggg</button>
+        <div class="hearts">💖💖💖</div>
+      </div>
+
+      <!-- Halaman 2: Permintaan Maaf -->
+      <div class="page hidden" id="page2">
+        <h1>Allooo Cantikkuuuu...</h1>
+        <p>Aku mau minta maaf yaa...</p>
+        <div class="apology-text">
+          <p>
+            Aku mau minta maaf kalau akhir-akhir ini aku sering bikin kamu marah atau
+            nggak mood.
+          </p>
+        </div>
+        <div class="button-container">
+          <button onclick="nextPage()" class="btn-primary">Lanjut...</button>
+          <button id="runaway-btn" class="btn-secondary">Gamau</button>
+        </div>
+        <div id="dont-run-text" class="hidden">Aduh jangan kabur donggg! 😭</div>
+      </div>
+
+      <!-- Halaman 3: Janji -->
+      <div class="page hidden" id="page3">
+        <h1>Emmmmm....</h1>
+        <div class="promise-text">
+          <p>
+            Aku juga minta maaf kalau tanpa sadar aku bikin kesalahan yang mungkin bikin
+            kamu kesel.
+          </p>
+        </div>
+        <div class="button-container">
+          <button onclick="nextPage()" class="btn-primary">Lanjut...</button>
+          <!-- <button id="runaway-btn" class="btn-secondary">Gamau</button> -->
+        </div>
+      </div>
+
+      <div class="page hidden" id="page4">
+        <h1>Anuuuu...</h1>
+        <div class="promise-text">
+          <p>
+            Aku bener-bener ga bermaksud gituu, dan aku selalu berusaha untuk lebih baik
+            lagi buat kamu.
+          </p>
+        </div>
+        <div class="button-container">
+          <button onclick="nextPage()" class="btn-primary">Lanjut...</button>
+          <!-- <button id="runaway-btn" class="btn-secondary">Gamau</button> -->
+        </div>
+      </div>
+
+      <!-- Halaman 4: Penutup -->
+      <div class="page hidden" id="page5">
+        <h1>Maafin aku, yaa? 🥺</h1>
+        <p>
+          Aku sayang banget sama kamu, dan aku nggak mau hal-hal kayak gini bikin kamu
+          sedih. Semoga hari ini hati kamu udah lebih tenang dan bisa ceria lagi ya sayangkuuu cintakuuu cantikkuuuu💖💖💖
+        </p>
+        <button id="lastBtn">Klik ini donggg!</button>
+        <button id="nextBtn">Klik ini jugaaa!</button>
+        <div id="flower-container"></div>
+      </div>
+    </div>
+
+    <div id="music-alert" class="hidden">
+      <div class="alert-box">
+        <h3>Sayanggg...</h3>
+        <p>Musiknya masih nyala nih!</p>
+        <p>Pause dulu yaa sebelum lanjut?</p>
+        <div class="alert-buttons">
+          <button id="alert-pause">Pause & Lanjut</button>
+          <!-- <button id="alert-continue">Lanjut Aja</button> -->
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
